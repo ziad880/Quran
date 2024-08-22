@@ -21,7 +21,7 @@ body {
     backdrop-filter: blur(10px);
 }
 .player-container {
-    background-color: #1e1e1e;
+    background-color: rgb(56 62 76 / 14%);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
