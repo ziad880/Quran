@@ -145,7 +145,7 @@ button:hover {
     color: #000; /* لون النص الأسود */
     background-color: transparent; /* خلفية شفافة */
     border: none; /* إزالة الحدود إذا كانت موجودة */
-    text-shadow: 0 1px 4px #fff;
+    text-shadow: 0 -1px 7px #fff;
 }
 .song-item:hover {
     transform: scale(1.2);
