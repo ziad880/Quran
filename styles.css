@@ -27,6 +27,7 @@ body {
     text-align: center;
     margin-bottom: 20px;
     max-width: 300px;
+    margin-top: -10px;
 }
 #album-cover {
     width: 100%;
@@ -40,6 +41,11 @@ body {
     font-weight: bold;
     color: #fff;
     margin: 10px 0;
+}
+#time{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }
 #artist {
     font-size: 14px;
@@ -61,6 +67,11 @@ body {
     width: 100%;
     margin-bottom: 20px;
     position: relative;
+    display: flex;
+    align-items: center;
+}
+#r{
+    margin-top: 10px;
 }
 .progress {
     background: #1db954;
@@ -68,8 +79,11 @@ body {
     height: 100%;
     width: 0;
 }
-#r{
-    margin-top: 10px;
+#current-time,
+#total-time {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin: 0 5px;
 }
 #controls {
     display: flex;
@@ -86,7 +100,8 @@ button {
     transition: transform 0.2s;
 }
 button:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+
 }
 #play {
     color: #1db954;
@@ -99,7 +114,7 @@ button:hover {
 }
 /* حاوية شريط التمرير */
 .song-slider-container {
-    overflow-x: auto; /* تفعيل التمرير الأفقي */
+    overflow: hidden; /* إخفاء شريط التمرير ومنع التمرير */
     white-space: nowrap; /* منع التفاف النصوص */
     -webkit-overflow-scrolling: touch; /* تمكين التمرير السلس على الأجهزة اللمسية */
     padding: 10px;
@@ -130,7 +145,10 @@ button:hover {
     color: #000; /* لون النص الأسود */
     background-color: transparent; /* خلفية شفافة */
     border: none; /* إزالة الحدود إذا كانت موجودة */
-    text-shadow:0 1px 4px #fff;
+    text-shadow: 0 1px 4px #fff;
+}
+.song-item:hover {
+    transform: scale(1.2);
 }
 /* حاوية القصة */
 .song-slider-container {
