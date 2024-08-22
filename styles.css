@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
 @font-face {
     font-family: 'CustomFont';
     src: url('fonts/arbfonts_Qurraan_sora.otf') format('woff2'),
-         url('fonts/arbfonts_Qurraan_sora.otf') format('woff');
+        url('fonts/arbfonts_Qurraan_sora.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
 body {
     font-family: Arial, sans-serif;
     background: url('doc/bac.jpg');
@@ -19,7 +19,6 @@ body {
     margin: 0;
     backdrop-filter: blur(10px);
 }
-
 .player-container {
     background-color: #1e1e1e;
     padding: 20px;
@@ -29,14 +28,12 @@ body {
     margin-bottom: 20px;
     max-width: 300px;
 }
-
 #album-cover {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-
 #title {
     font-family: 'CustomFont', sans-serif;
     font-size: 30px;
@@ -44,13 +41,18 @@ body {
     color: #fff;
     margin: 10px 0;
 }
-
 #artist {
     font-size: 14px;
     color: #b3b3b3;
     margin-bottom: 20px;
 }
-
+/* حاوية الأزرار */
+.button-container {
+    display: flex;
+    justify-content: center; /* توسيط الأزرار أفقياً */
+    align-items: center; /* توسيط الأزرار عمودياً */
+    gap: 10px; /* مسافة بين الأزرار */
+}
 .progress-container {
     background: #404040;
     border-radius: 5px;
@@ -60,20 +62,20 @@ body {
     margin-bottom: 20px;
     position: relative;
 }
-
 .progress {
     background: #1db954;
     border-radius: 5px;
     height: 100%;
     width: 0;
 }
-
+#r{
+    margin-top: 10px;
+}
 #controls {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 button {
     background: none;
     border: none;
@@ -83,46 +85,43 @@ button {
     margin: 0 10px;
     transition: transform 0.2s;
 }
-
 button:hover {
     transform: scale(1.2);
 }
-
 #play {
     color: #1db954;
 }
-
 #prev, #next {
     color: #b3b3b3;
 }
-
 #repeat.active, #shuffle.active {
     color: #1db954;
 }
-
-/* شريط التمرير */
+/* حاوية شريط التمرير */
 .song-slider-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto; /* تفعيل التمرير الأفقي */
+    white-space: nowrap; /* منع التفاف النصوص */
+    -webkit-overflow-scrolling: touch; /* تمكين التمرير السلس على الأجهزة اللمسية */
     padding: 10px;
     margin: 0;
-    scrollbar-width: none; /* لإخفاء شريط التمرير في Firefox */
+    scrollbar-width: none; /* إخفاء شريط التمرير في Firefox */
     width: 100%; /* تأكد من أن الحاوية تأخذ عرضًا كاملًا */
+    box-sizing: border-box; /* تضمين padding و border في العرض الإجمالي */
 }
-
 .song-slider-container::-webkit-scrollbar {
     display: none;
 }
-
 .song-slider {
-    display: flex;
-    list-style: none;
+    display: flex; /* استخدام flexbox لعرض العناصر في صف */
+    list-style: none; /* إزالة نقاط القائمة */
     padding: 0;
     margin: 0;
 }
-
+/* عناصر القائمة */
 .song-item {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     display: inline-block;
     padding: 10px 15px;
     cursor: pointer;
@@ -131,8 +130,19 @@ button:hover {
     color: #000; /* لون النص الأسود */
     background-color: transparent; /* خلفية شفافة */
     border: none; /* إزالة الحدود إذا كانت موجودة */
+    text-shadow:0 1px 4px #fff;
 }
-
+/* حاوية القصة */
+.song-slider-container {
+    max-width: calc(10 * (10px + 15px)); 
+    box-sizing: border-box;
+}
 .song-item:hover {
     background-color: transparent; /* إزالة اللون الأبيض عند التمرير */
+}
+html, body {
+    overflow: hidden; /* إخفاء شريط التمرير ومنع التمرير */
+    height: 100%; /* تأكد من أن ارتفاع الصفحة يأخذ العرض الكامل */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة التباعد الافتراضي */
 }
