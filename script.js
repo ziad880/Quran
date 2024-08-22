@@ -42,7 +42,6 @@ slider.addEventListener('mousemove', (e) => {
     const walk = (x - startX) * 2; // سرعة التمرير
     slider.scrollLeft = scrollLeft - walk;
 });
-
 // قائمة الأغاني
 const songs = [
     { title: 'الفاتحة', file: 'doc/voice/001.mp3' },
@@ -142,7 +141,23 @@ const songs = [
     { title: 'التين', file: 'doc/voice/095.mp3' },
     { title: 'العلق', file: 'doc/voice/096.mp3' },
     { title: 'القدر', file: 'doc/voice/097.mp3' },
-    { title: 'الناس', file: 'doc/voice/097.mp3' }
+    { title: 'البينة', file: 'doc/voice/098.mp3' },
+    { title: 'الزلزلة', file: 'doc/voice/099.mp3' },
+    { title: 'العاديات', file: 'doc/voice/100.mp3' },
+    { title: 'القارعة', file: 'doc/voice/101.mp3' },
+    { title: 'التكاثر', file: 'doc/voice/102.mp3' },
+    { title: 'العصر', file: 'doc/voice/103.mp3' },
+    { title: 'الهمزة', file: 'doc/voice/104.mp3' },
+    { title: 'الفيل', file: 'doc/voice/105.mp3' },
+    { title: 'قريش', file: 'doc/voice/106.mp3' },
+    { title: 'الماعون', file: 'doc/voice/107.mp3' },
+    { title: 'الكوثر', file: 'doc/voice/108.mp3' },
+    { title: 'الكافرون', file: 'doc/voice/109.mp3' },
+    { title: 'النصر', file: 'doc/voice/110.mp3' },
+    { title: 'المسد', file: 'doc/voice/111.mp3' },
+    { title: 'الإخلاص', file: 'doc/voice/112.mp3' },
+    { title: 'الفلق', file: 'doc/voice/113.mp3' },
+    { title: 'الناس', file: 'doc/voice/114.mp3' }
 ];
 
 let songIndex = 0;
