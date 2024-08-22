@@ -41,7 +41,7 @@ body {
     font-size: 30px;
     font-weight: bold;
     color: #fff;
-    margin: 10px 0;
+    margin:  0;
 }
 #time{
     display: flex;
@@ -51,7 +51,7 @@ body {
 #artist {
     font-size: 14px;
     color: #b3b3b3;
-    margin-bottom: 20px;
+    margin: 0px;
 }
 /* حاوية الأزرار */
 .button-container {
