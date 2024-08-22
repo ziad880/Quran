@@ -10,6 +10,8 @@ const artist = document.getElementById('artist');
 const albumCover = document.getElementById('album-cover');
 const progressContainer = document.querySelector('.progress-container');
 const progress = document.getElementById('progress');
+const currentTimeElem = document.getElementById('current-time');
+const totalTimeElem = document.getElementById('total-time');
 const slider = document.querySelector('.song-slider-container');
 
 let isDown = false;
@@ -185,6 +187,10 @@ function updateProgress(e) {
     const { duration, currentTime } = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%`;
+
+    // تحديث الوقت الحالي والوقت الإجمالي
+    currentTimeElem.innerText = formatTime(currentTime);
+    totalTimeElem.innerText = formatTime(duration);
 }
 
 // تعيين التقدم
@@ -240,13 +246,25 @@ audio.addEventListener('ended', () => {
     }
 });
 
-// التعامل مع أحداث الأزرار
+// تنسيق الوقت
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
+// تحديث شريط التقدم عند تشغيل الأغنية
+audio.addEventListener('timeupdate', updateProgress);
+
+// تعيين التقدم عند النقر على شريط التقدم
+progressContainer.addEventListener('click', setProgress);
+
+// تعيين وظائف الأزرار
 playBtn.addEventListener('click', () => {
-    const isPlaying = playBtn.innerHTML.includes('pause');
-    if (isPlaying) {
-        pauseSong();
-    } else {
+    if (audio.paused) {
         playSong();
+    } else {
+        pauseSong();
     }
 });
 
@@ -254,12 +272,9 @@ prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 repeatBtn.addEventListener('click', toggleRepeat);
 shuffleBtn.addEventListener('click', toggleShuffle);
-audio.addEventListener('timeupdate', updateProgress);
-progressContainer.addEventListener('click', setProgress);
 
-// تحميل الأغنية الأولى عند تشغيل الصفحة
+// تحميل الأغنية الأولى عند التحميل
 loadSong(songs[songIndex]);
-
 // تعيين الصورة واسم الفنان مرة واحدة
 albumCover.src = 'doc/alafasy.png'; // الصورة المشتركة
 artist.innerText = 'مشاري العفاسي ';   // الفنان المشترك
